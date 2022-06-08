@@ -1,0 +1,36 @@
+.product-image {
+  width: 150px;
+  height: 170px;
+  cursor: pointer;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  justify-content: center;
+
+  align-items: center;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 12px;
+  background-color: white;
+  
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.product-title {
+  height: 20px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.add-btn {
+  padding: 10px;
+  background-color: rgb(111, 229, 172);
+  border: none;
+  width: 100%;
+  cursor: pointer;
+}
