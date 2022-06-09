@@ -1,17 +1,26 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import "./Header.css"
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import "./Header.css";
+import { FaShoppingCart } from "react-icons/fa";
 
 export default function Header() {
-  return (
-    <div className='header-parent'>
-        <span>REDUX STORE</span>
-        <div className='header-child'>
-            <NavLink to="/" className="navLink">Home</NavLink>
-            <NavLink to="cart" className="navLink">Cart</NavLink>
-            <span className="navLink "><b>Cart ITEMS :0</b> </span>
+  const cartItems = useSelector((state) => state.cart);
 
-            </div>
+  return (
+    <div className="header-parent">
+      <NavLink to="/" className="navLink">
+        REDUX STORE
+      </NavLink>
+      <div className="header-child">
+        <NavLink to="/" className="navLink">
+          Home
+        </NavLink>
+        <NavLink to="cart" className="navLink">
+          Cart <FaShoppingCart />{" "}
+          <b className="cart-count">{cartItems.length}</b>
+        </NavLink>
+      </div>
     </div>
-  )
+  );
 }

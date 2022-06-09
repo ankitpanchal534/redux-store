@@ -20,9 +20,8 @@ export const Products = () => {
     fetchApi();
   }, []);
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const handleAdd = (product) => {
-    console.log(product);
     dispatch(add(product));
   };
 
@@ -32,13 +31,7 @@ export const Products = () => {
         <h1>Loading...</h1>
       ) : (
         product.map((item, i) => (
-          <Card
-            key={i}
-            image={item.image}
-            handleAdd={handleAdd}
-            title={item.title}
-            price={Math.floor(item.price * 62)}
-          />
+          <Card handleAdd={handleAdd} key={i} item={item} />
         ))
       )}
     </div>

@@ -23,14 +23,25 @@
   justify-content: center;
 }
 .product-title {
-  height: 20px;
+  height: 25px;
   overflow: hidden;
   cursor: pointer;
 }
-.add-btn {
+.add-btn{
   padding: 10px;
   background-color: rgb(111, 229, 172);
   border: none;
   width: 100%;
   cursor: pointer;
+  font-weight: 700;
+}
+.add-btn:hover{
+  background-color:  rgb(1, 135, 70);
+  color: white;
+
+}
+
+
+@media screen and (max-width:798px) {
+ 
 }

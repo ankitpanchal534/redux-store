@@ -1,10 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
-import cart from './cartSlice'
-
+import cartSlice from "./cartSlice";
 
 const store = configureStore({
-    reducer:{cart},
-})
+  reducer: {
+    cart: cartSlice,
+    
+  },
+  middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware({
+          serializableCheck: false,
+        }),
+});
 
-
-export default store; 
+export default store;
