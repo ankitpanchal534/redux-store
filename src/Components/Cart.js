@@ -11,14 +11,16 @@ export default function Cart() {
 
   const removeHandler = (product) => {
   
-    dispatch(remove(product.item.id));
+    dispatch(remove(product.item));
   };
 
   return (
     <div className="cart">
       <h1>My Cart</h1>
-      <div className={Products ? "cartProducts-block" : "cartProducts-flex"}>
-        {Products ? (
+      <div className={Products ==""?"cartProducts-flex":"cartProducts-block"}>
+        {Products ==""?(
+          <h1> Your Cart is Empty</h1>
+        ):(
           Products.map((item, i) => (
             <CartCard
               CartProducts={item}
@@ -26,9 +28,11 @@ export default function Cart() {
               removeHandler={removeHandler}
             />
           ))
-        ) : (
-          <h1> Your Cart is Empty</h1>
-        )}
+        )
+      
+      
+      
+      }
       </div>
     </div>
   );

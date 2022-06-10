@@ -23,6 +23,7 @@ export const Products = () => {
   const dispatch = useDispatch();
   const handleAdd = (product) => {
     dispatch(add(product));
+    alert("Added to Cart ! ")
   };
 
   return (
