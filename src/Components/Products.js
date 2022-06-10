@@ -6,17 +6,18 @@ import Card from "./Card";
 export const Products = () => {
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    async function fetchApi() {
-      setLoading(true);
-      await fetch("https://fakestoreapi.com/products")
-        .then((res) => res.json())
-        .then((data) => {
-          setProduct(data);
-        });
-      setLoading(false);
-    }
+  async function fetchApi() {
+    setLoading(true);
+    await fetch("https://fakestoreapi.com/products")
+      .then((res) => res.json())
+      .then((data) => {
+        setProduct(data);
+      });
+    setLoading(false);
+  }
 
+  useEffect(() => {
+    
     fetchApi();
   }, []);
 
